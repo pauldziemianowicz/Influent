@@ -1,0 +1,62 @@
+body {
+  width: 100vw;
+  height: 100vh; }
+
+header.masthead {
+  display: flex;
+  width: 100vw;
+  height: 80px;
+  background-color: #e7e7e7;
+  border-bottom: 1px solid black; }
+
+button.instagram-login-cta {
+  height: 30px; }
+
+div.masthead-logo {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  height: 80px; }
+  div.masthead-logoa.masthead-logo h1 {
+    width: 150px;
+    text-align: center; }
+
+div.masthead-filler {
+  width: 50%;
+  height: 80px; }
+
+div.masthead-nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+  height: 80px;
+  padding: 20px 40px 0px 0px; }
+  div.masthead-nav h5 {
+    width: 60px;
+    height: 20px; }
+
+nav.temp-nav {
+  display: flex;
+  width: 100vw;
+  height: 30px;
+  padding: 5px 10px 5px 82px; }
+  nav.temp-nav h5 {
+    margin: 0px 70px 0px 0px;
+    color: black; }
+
+main.page-body {
+  width: 80vw;
+  height: 617px;
+  margin: 40px 0px 0px 80px; }
+
+nav.dash-nav {
+  display: flex; }
+  nav.dash-nav a {
+    margin-right: 20px; }
+
+nav.comm-nav {
+  display: flex; }
+  nav.comm-nav a {
+    margin-right: 20px; }
+
+/*# sourceMappingURL=style.css.map */
