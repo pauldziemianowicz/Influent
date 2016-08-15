@@ -1,6 +1,8 @@
 var app = angular.module('Influent',['ui.router'])
 
-app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+app.config(function($httpProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
   $urlRouterProvider.otherwise("/");
 
   $stateProvider
