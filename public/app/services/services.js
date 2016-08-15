@@ -1,4 +1,4 @@
-app.factory('instagramAPI', ['$http', function($http) {
+app.factory('instagramAPI', ['$window', '$http', function($window, $http) {
   var service = {};
   service.authenticateAccount = function() {
     $window.location.href="https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
