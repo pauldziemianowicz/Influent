@@ -7,11 +7,13 @@ app.factory('instagramAPI', ['$http', function($http) {
     $http({
       method: "GET",
       url: "https://influent.herokuapp.com/api",
-      headers: {"Access-Control-Allow-Origin": "https://influent.herokuapp.com/"}
+      headers: {"Access-Control-Allow-Origin": "https://influent.herokuapp.com"}
     }).then(function(data){
       console.log(data);
       service.instagramClientId = data.data;
       console.log(service.instagramClientId);
+    }).catch(function(error) {
+      console.log(error);
     })
   }
   return service;
