@@ -1,4 +1,4 @@
-app.factory('instagramAPI', ['$q', '$window', '$http', function($q, $window, $http) {
+app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout' function($q, $window, $http, $timeout) {
   var service = {};
   service.accessToken;
 
