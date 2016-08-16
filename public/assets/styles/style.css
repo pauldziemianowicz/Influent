@@ -22,13 +22,13 @@ div.masthead-logo {
     text-align: center; }
 
 div.masthead-filler {
-  width: 50%;
+  width: 40%;
   height: 80px; }
 
 div.masthead-nav {
   display: flex;
   justify-content: flex-end;
-  width: 30%;
+  width: 40%;
   height: 80px;
   padding: 20px 40px 0px 0px; }
   div.masthead-nav h5 {
