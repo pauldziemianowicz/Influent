@@ -19,9 +19,11 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
   };
 
   $scope.view.printAccessToken = function() {
-    // console.log($window.location.hash.split('').splice(15, $window.location.hash.length).join(''));
-    // $scope.data.accessToken = $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
     console.log($scope.data.token);
+  };
+
+  $scope.view.removeAccessToken = function() {
+    localStorage.removeItem(influentInstagramToken)
   };
 
   // $scope.view.apiAccessTokenTest = function() {
