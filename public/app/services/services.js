@@ -1,20 +1,22 @@
 app.factory('instagramAPI', ['$q', '$window', '$http', function($q, $window, $http) {
   var service = {};
   service.accessToken;
+
   service.authenticateAccount = function() {
 
-    function getAccessToken(callback) {
+    function getAccessToken() {
       $window.location.href="https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
     }
 
     return $q(function(resolve, reject){
-      getAccessToken(function(error, userData){
-        if(error) {
-          reject(error);
+      $timeout(function(data, error){
+        if(data) {
+          // $window.location.href="https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
+          resolve('success');
         } else {
-          resolve(userData);
+          reject('error');
         }
-      });
+      }, 0);
     });
 
     // $window.location.href="https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
