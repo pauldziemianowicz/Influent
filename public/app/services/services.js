@@ -13,7 +13,9 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', function($q, 
       }
     }
 
-    return $timeout(getAccessToken(), 0);
+    return $timeout(getAccessToken(), 0).then(function(data) {
+      console.log(data);
+    })
 
     // $window.location.href="https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
     // service.accessToken = $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
