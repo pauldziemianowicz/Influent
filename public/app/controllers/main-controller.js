@@ -5,6 +5,9 @@ app.controller('MainController', ['$scope', 'instagramAPI', function($scope, ins
   $scope.view.authenticateInstagram = function() {
     instagramAPI.authenticateAccount();
   }
+  $scope.view.printAccessToken = function() {
+    instagramAPI.printLocation();
+  }
   $scope.view.returnInstagramClientId = function() {
     console.log(instagramAPI.instagramClientId);
   }
