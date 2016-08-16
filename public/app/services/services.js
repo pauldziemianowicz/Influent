@@ -3,11 +3,13 @@ app.factory('instagramAPI', ['$q', '$window', '$http', function($q, $window, $ht
   service.accessToken;
   service.authenticateAccount = function() {
     $window.location.href="https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
-    service.accessToken = $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
+    // service.accessToken = $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
   }
+
   service.printLocation = function() {
     console.log(service.accessToken);
   }
+
   service.returnInstagramClientId = function() {
     $http({
       method: "GET",
@@ -18,5 +20,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', function($q, $window, $ht
       next(error);
     })
   }
+
   return service;
+
 }])
