@@ -23,7 +23,7 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
   };
 
   $scope.view.removeAccessToken = function() {
-    localStorage.removeItem(influentInstagramToken)
+    localStorage.removeItem('influentInstagramToken')
   };
 
   // $scope.view.apiAccessTokenTest = function() {
