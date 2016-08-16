@@ -5,7 +5,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', function($q, 
   service.authenticateAccount = function() {
 
     function getAccessToken() {
-      $window.location.href="https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
+      $window.location.href = "https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
       if($window.location.href === "https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token") {
         return "instagram authentication URL loaded";
       } else {
@@ -17,8 +17,8 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', function($q, 
       $timeout(getAccessToken(){
         // $window.location.href="https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
         resolve('success');
-      })
-    }, 0);
+      }, 0)
+    });
 
     // $window.location.href="https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
     // service.accessToken = $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
