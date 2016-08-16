@@ -8,11 +8,9 @@ app.factory('instagramAPI', ['$window', '$http', function($window, $http) {
       method: "GET",
       url: "https://influent.herokuapp.com/api",
     }).then(function(data){
-      console.log(data);
       service.instagramClientId = data.data;
-      console.log(service.instagramClientId);
     }).catch(function(error) {
-      console.log(error);
+      next(error);
     })
   }
   return service;
