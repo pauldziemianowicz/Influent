@@ -5,10 +5,9 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', function(
   $scope.data = {}
 
   $scope.view.authenticateInstagram = function() {
-    instagramAPI.authenticateAccount().then(function(data) {
-      console.log(data);
+    instagramAPI.authenticateAccount().then(function() {
       // console.log($window.location.hash.split('').splice(15, $window.location.hash.length).join(''));
-      // $scope.data.accessToken = $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
+      $scope.data.accessToken = $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
     })
   };
 
