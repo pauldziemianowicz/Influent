@@ -5,7 +5,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', function($q, $window, $ht
     service.accessToken = $window.location;
   }
   service.printLocation = function() {
-    console.console.log(service.accessToken);
+    console.log(service.accessToken);
   }
   service.returnInstagramClientId = function() {
     $http({
