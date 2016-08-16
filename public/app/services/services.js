@@ -12,7 +12,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', function($q, 
       }
     }
 
-    $timeout(getAccessToken(), 0).then(function() {
+    return $timeout(getAccessToken(), 0).then(function() {
       console.log($window.location.hash.split('').splice(15, $window.location.hash.length).join(''));
       service.token = $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
       console.log(service.token);
