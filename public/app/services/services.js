@@ -6,16 +6,17 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', function($q, 
 
     function getAccessToken() {
       $window.location.href="https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
+      if($window.location.href === "https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token") {
+        return "instagram authentication URL loaded";
+      } else {
+        return "authentication URL failed to load";
+      }
     }
 
     return $q(function(resolve, reject){
-      $timeout(function(data, error){
-        if(data) {
-          getAccessToken()
+      $timeout(getAccessToken(){
           // $window.location.href="https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
           resolve('success');
-        } else {
-          reject('error');
         }
       }, 0);
     });
