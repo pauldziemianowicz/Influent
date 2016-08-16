@@ -1,4 +1,4 @@
-app.controller('MainController', ['$scope', '$window', 'instagramAPI', function($scope, $window, instagramAPI) {
+app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout', function($scope, $window, instagramAPI, $timeout) {
   instagramAPI.returnInstagramClientId();
 
   $scope.view = {};
@@ -6,7 +6,9 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', function(
 
   $scope.view.authenticateInstagram = function() {
     instagramAPI.authenticateAccount();
-    console.log($window.location.hash.split('').splice(15, $window.location.hash.length).join(''));
+    console.log(instagramAPI.token);
+    $timeout(console.log(instagramAPI.token), 500);
+    // console.log($window.location.hash.split('').splice(15, $window.location.hash.length).join(''));
     // $scope.data.accessToken = $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
   };
 
