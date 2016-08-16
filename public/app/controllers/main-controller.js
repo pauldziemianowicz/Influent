@@ -13,8 +13,8 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', function(
   };
 
   $scope.view.printAccessToken = function() {
-    console.log($scope.data.accessToken);
     console.log($window.location.hash.split('').splice(15, $window.location.hash.length).join(''));
+    $scope.data.accessToken = $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
   };
 
   // $scope.view.apiAccessTokenTest = function() {
