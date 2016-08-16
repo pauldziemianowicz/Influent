@@ -7,9 +7,13 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
 
   $scope.view.authenticateInstagram = function() {
     instagramAPI.authenticateAccount().then(function(data) {
+      console.log("2 ------");
       console.log(data);
       $scope.data.token = data;
+      console.log($scope.data);
+      console.log($scope.data.token);
     })
+    console.log("1 ------");
     console.log($scope.data);
     console.log($scope.data.token);
     // console.log($window.location.hash.split('').splice(15, $window.location.hash.length).join(''));
