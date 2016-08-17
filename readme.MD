@@ -1,10 +1,10 @@
-**deployed application:**
+##deployed application:##
 https://influent.herokuapp.com
 
-**github repo:**
+##github repo:##
 https://github.com/pauldziemianowicz/influent
 
-*Instructions for angular assessment*
+##Instructions for angular assessment##
 
   1) in the top right, click **'login with instagram'**. you must have access to an instagram account login for this to work
 
