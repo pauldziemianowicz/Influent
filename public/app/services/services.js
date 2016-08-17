@@ -2,7 +2,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
   var service = {};
 
   var validateAccessCodeReturn = $interval(function() {
-    console.log($window.location.hash.split('').splice(0, 14).join('') === "#access_token=");
+    console.log($window.location.hash.split('').splice(0, 14).join(''));
     if ($window.location.hash.split('').splice(0, 14).join('') === "#access_token=") {
       console.log("it's a match!");
       $interval.cancel(validateAccessCodeReturn)
