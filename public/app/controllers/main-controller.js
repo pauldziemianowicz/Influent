@@ -69,7 +69,6 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
       console.log(data);
       $scope.data.userMedia = data;
     })
-    console.log($scope.data.userMedia);
   }
 
 }])
