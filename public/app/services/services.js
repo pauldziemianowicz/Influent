@@ -10,7 +10,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
 
     $timeout(getAccessToken(), 0).then(function() {
 
-      return $interval(function() {
+      $interval(function() {
       console.log($window.location.hash.split('').splice(0, 14).join(''));
       if ($window.location.hash.split('').splice(0, 14).join('') === "#access_token=") {
         console.log("it's a match!");
