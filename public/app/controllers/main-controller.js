@@ -4,8 +4,7 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
   $scope.view = {};
   $scope.data = {}
   $scope.data.token = localStorage.influentInstagramToken;
-  $scope.data.tokenInUrl = ($window.location.hash.split('').splice(0, 15).join(''))
-  $scope.data.tokenInUrlBool = ($window.location.hash.split('').splice(0, 15).join('') === "#/access_token=")
+  $scope.data.tokenInUrl = ($window.location.hash.split('').splice(0, 15).join('') === "#/access_token=")
 
   $scope.view.authenticateInstagram = function() {
     instagramAPI.authenticateAccount().then(function(data) {
