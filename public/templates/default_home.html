@@ -3,11 +3,13 @@
 <button ng-click="view.getUserMedia(data.token)">Get User Media</button>
 
 <h2>Your Profile Data</h2>
-<h4>username: {{data.userData.data.username}}</h4>
-<h4>bio: {{data.userData.data.bio}}</h4>
-<h4>followed by: {{data.userData.data.counts.followed_by}}</h4>
-<h4>following: {{data.userData.data.counts.follows}}</h4>
-<h4><img ng-src="{{data.userData.data.profile_picture}}" alt="loading image..."></h4>
+<section ng-show="data.userData">
+  <h4>username: {{data.userData.data.username}}</h4>
+  <h4>bio: {{data.userData.data.bio}}</h4>
+  <h4>followed by: {{data.userData.data.counts.followed_by}}</h4>
+  <h4>following: {{data.userData.data.counts.follows}}</h4>
+  <h4><img ng-src="{{data.userData.data.profile_picture}}" alt="loading image..."></h4>
+</section>
 
 <h2>Your Instagram Media</h2>
 <!-- <h4>{{data.userMedia}}</h4> -->
