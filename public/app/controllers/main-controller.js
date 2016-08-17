@@ -7,11 +7,8 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
 
   $scope.view.authenticateInstagram = function() {
     instagramAPI.authenticateAccount().then(function(data) {
-      console.log("2 ------");
       console.log(data);
       localStorage.influentInstagramToken = data;
-      $scope.data.token = data;
-      console.log($scope.data);
       console.log($scope.data.token);
     })
     // console.log($window.location.hash.split('').splice(15, $window.location.hash.length).join(''));
@@ -19,6 +16,7 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
   };
 
   $scope.view.printAccessToken = function() {
+    console.log($window.location.hash.split('').splice(0, 15).join('') === "#access_token=");
     console.log($scope.data.token);
   };
 
