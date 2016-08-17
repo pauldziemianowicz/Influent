@@ -16,7 +16,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
         console.log("it's a match!");
         $interval.cancel();
         return $timeout(function() {
-          $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
+          return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
         }, 0)
         } else {
           console.log("not yet!");
