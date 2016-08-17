@@ -35,9 +35,19 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
     }).then(function(data){
       service.instagramClientId = data.data;
     }).catch(function(error) {
-      next(error);
+      console.log(error);
     })
   }
+
+  service.getUserData = function(accessToken) {
+    $http.get("https://api.instagram.com/v1/users/self/?access_token=" + accessToken)
+    .then(function(data) {
+      return data
+    }).catch(function(error) {
+      console.log(error);
+    })
+  }
+
 
   return service;
 

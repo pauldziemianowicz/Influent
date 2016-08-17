@@ -43,4 +43,9 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
   $scope.view.returnInstagramClientId = function() {
     console.log(instagramAPI.instagramClientId);
   };
+
+  $scope.view.getUserData = function() {
+    console.log(instagramAPI.getUserData());
+  }
+
 }])
