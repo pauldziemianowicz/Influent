@@ -19,7 +19,9 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
         } else {
           console.log("not yet!");
         }
-      }, 100)
+      }, 100).then(function(data) {
+        console.log(data);
+      })
       // return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
     })
 
