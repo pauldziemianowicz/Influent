@@ -40,19 +40,21 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
   }
 
   service.getUserData = function(accessToken) {
-    $http({
-      method: "JSONP",
-      url: "https://api.instagram.com/v1/users/self/?access_token=" + accessToken + "&callback=JSON_CALLBACK",
-      headers: {"Access-Control-Allow-Origin": "https://influent.herokuapp.com"}
-    })
-    .success(function(data) {
-      return data
-    })
+    // $http({
+    //   method: "JSONP",
+    //   url: "https://api.instagram.com/v1/users/self/?access_token=" + accessToken + "&callback=JSON_CALLBACK",
+    //   headers: {"Access-Control-Allow-Origin": "https://influent.herokuapp.com"}
+    // })
+    // .success(function(data) {
+    //   return data
+    // })
     // .catch(function(error) {
     //   return error;
     // })
-  }
-
+    $http.jsonp("https://api.instagram.com/v1/users/self/?access_token=" + accessToken + "&callback=JSON_CALLBACK")
+    .success(function(data) {
+      console.log(data);
+    })
 
   return service;
 
