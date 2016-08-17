@@ -40,7 +40,11 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
   }
 
   service.getUserData = function(accessToken) {
-    $http.get("https://api.instagram.com/v1/users/self/?access_token=" + accessToken)
+    $http({
+      method: "GET",
+      url: "https://api.instagram.com/v1/users/self/?access_token=" + accessToken,
+      headers: {"Access-Control-Allow-Origin": "https://api.instagram.com/"}
+    })
     .then(function(data) {
       return data
     }).catch(function(error) {
