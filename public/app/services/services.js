@@ -55,6 +55,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
     .success(function(data) {
       console.log(data);
     })
+  }
 
   return service;
 
