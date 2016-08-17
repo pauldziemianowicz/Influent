@@ -53,6 +53,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
     // })
     $http.jsonp("https://api.instagram.com/v1/users/self/?access_token=" + accessToken + "&callback=JSON_CALLBACK")
     .success(function(data) {
+      console.log(data);
       return data;
     })
   }
