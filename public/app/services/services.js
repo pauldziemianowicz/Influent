@@ -8,7 +8,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
       console.log($window.location.href);
     }
 
-    return $timeout(getAccessToken(), 0).then(function() {
+    $timeout(getAccessToken(), 0).then(function() {
 
       $interval(function() {
       console.log($window.location.hash.split('').splice(0, 14).join(''));
@@ -19,12 +19,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
         } else {
           console.log("not yet!");
         }
-      }, 100).then(function(data) {
-        console.log('LALALLA');
-        console.log('LALALLA');
-        console.log('LALALLA');
-        console.log('LALALLA');
-      })
+      }, 100)
       // return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
     })
 
