@@ -45,11 +45,12 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
       url: "https://api.instagram.com/v1/users/self/?access_token=" + accessToken + "&callback=JSON_CALLBACK",
       headers: {"Access-Control-Allow-Origin": "https://influent.herokuapp.com"}
     })
-    .then(function(data) {
+    .success(function(data) {
       return data
-    }).catch(function(error) {
-      return error;
     })
+    // .catch(function(error) {
+    //   return error;
+    // })
   }
 
 
