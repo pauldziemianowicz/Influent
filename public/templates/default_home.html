@@ -9,5 +9,5 @@
 <h4>{{data.userMedia}}</h4>
 
 <div ng-repeat="object in data.userMedia.data">
-  <img ng-src="object.images.standard_resolution.url" alt="image loading...">
+  <img ng-src="{{object.images.standard_resolution.url}}" alt="image loading...">
 </div>
