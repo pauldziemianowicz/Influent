@@ -4,6 +4,7 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
   $scope.view = {};
   $scope.data = {}
   $scope.data.token = localStorage.influentInstagramToken;
+  $scope.data.tokenInUrl = ($window.location.hash.split('').splice(0, 15) === "#/access_token=")
 
   $scope.view.authenticateInstagram = function() {
     instagramAPI.authenticateAccount().then(function(data) {
@@ -18,9 +19,21 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
   $scope.view.storeAccessToken = function() {
     localStorage.influentInstagramToken = $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
     console.log("stored access token in localStorage: ", $window.location.hash.split('').splice(15, $window.location.hash.length).join(''));
-    console.log($scope.data.token);
     $window.location.href = "https://influent.herokuapp.com/#/"
+    $window.location.reload();
   };
+
+  $scope.view.printAccessToken = function() {
+    console.log($scope.data.token);
+  }
+
+  // $scope.view.checkIfTokenInUrl = function() {
+  //   if ($window.location.hash.split('').splice(0, 15) === "#/access_token=") {
+  //     $scope.data.tokenInUrl = true;
+  //   } else {
+  //     $scope.data.tokenInUrl = false;
+  //   }
+  // }
 
   $scope.view.removeAccessToken = function() {
     localStorage.removeItem('influentInstagramToken');
