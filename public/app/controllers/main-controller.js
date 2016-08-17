@@ -58,4 +58,18 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
     console.log($scope.data.userData);
   }
 
+  $scope.view.getUserMedia = function(accessToken) {
+    // console.log($scope.data.token);
+    // console.log(instagramAPI.getUserData($scope.data.token));
+    // $scope.data.userData = instagramAPI.getUserData($scope.data.token);
+    // console.log($scope.data.userData);
+
+    $http.jsonp("https://api.instagram.com/v1/users/self/media/recent?access_token=" + accessToken + "&callback=JSON_CALLBACK")
+    .success(function(data) {
+      console.log(data);
+      $scope.data.userMedia = data;
+    })
+    console.log($scope.data.userMedia);
+  }
+
 }])
