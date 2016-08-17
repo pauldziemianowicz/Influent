@@ -43,7 +43,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
     $http({
       method: "GET",
       url: "https://api.instagram.com/v1/users/self/?access_token=" + accessToken,
-      headers: {"Access-Control-Allow-Origin": "https://api.instagram.com/"}
+      headers: {"Access-Control-Allow-Origin": "https://influent.herokuapp.com"}
     })
     .then(function(data) {
       return data
