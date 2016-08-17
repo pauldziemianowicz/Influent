@@ -15,19 +15,17 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
     // $scope.data.accessToken = $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
   };
 
-  $scope.view.printAccessToken = function() {
-    console.log($window.location.hash.split('').splice(0, 15).join(''));
+  $scope.view.storeAccessToken = function() {
+    localStorage.influentInstagramToken = ($window.location.hash.split('').splice(0, 15).join(''))
+    console.log("stored access token in localStorage: ", $window.location.hash.split('').splice(0, 15).join(''));
     console.log($scope.data.token);
+    $window.location.reload();
   };
 
   $scope.view.removeAccessToken = function() {
     localStorage.removeItem('influentInstagramToken');
     $window.location.reload();
   };
-
-  // $scope.view.apiAccessTokenTest = function() {
-  //   console.log(instagramAPI.accessToken);
-  // };
 
   $scope.view.returnInstagramClientId = function() {
     console.log(instagramAPI.instagramClientId);
