@@ -9,19 +9,18 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
     }
 
     return $timeout(getAccessToken(), 0).then(function() {
-      
-      var validateAccessCodeReturn = $interval(function() {
-        console.log($window.location.hash.split('').splice(0, 14).join(''));
-        if ($window.location.hash.split('').splice(0, 14).join('') === "#access_token=") {
-          console.log("it's a match!");
-          $interval.cancel()
-          return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
-          } else {
-            console.log("not yet!");
-          }
-        }, 100)
+
+      $interval(function() {
+      console.log($window.location.hash.split('').splice(0, 14).join(''));
+      if ($window.location.hash.split('').splice(0, 14).join('') === "#access_token=") {
+        console.log("it's a match!");
+        $interval.cancel();
+        return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
+        } else {
+          console.log("not yet!");
+        }
+      }, 100)
       // return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
-      validateAccessCodeReturn();
     })
 
     // $window.location.href="https://api.instagram.com/oauth/authorize/?client_id=" + service.instagramClientId + "&redirect_uri=https://influent.herokuapp.com&response_type=token";
