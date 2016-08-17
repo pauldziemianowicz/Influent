@@ -16,7 +16,7 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
   };
 
   $scope.view.printAccessToken = function() {
-    console.log($window.location.hash.split('').splice(0, 15).join('') === "#access_token=");
+    console.log($window.location.hash.split('').splice(0, 15).join(''));
     console.log($scope.data.token);
   };
 
