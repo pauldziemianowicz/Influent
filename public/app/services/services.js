@@ -8,14 +8,16 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
       console.log($window.location.href);
     }
 
-    $timeout(getAccessToken(), 0).then(function() {
+    return $timeout(getAccessToken(), 0).then(function() {
 
       $interval(function() {
       console.log($window.location.hash.split('').splice(0, 14).join(''));
       if ($window.location.hash.split('').splice(0, 14).join('') === "#access_token=") {
         console.log("it's a match!");
         $interval.cancel();
-        return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
+        return $timeout(function() {
+          $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
+        }, 0)
         } else {
           console.log("not yet!");
         }
