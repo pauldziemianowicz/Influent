@@ -10,17 +10,15 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
 
     return $timeout(getAccessToken(), 0).then(function() {
 
-      $interval(function() {
+      return $interval(function() {
       console.log($window.location.hash.split('').splice(0, 14).join(''));
       if ($window.location.hash.split('').splice(0, 14).join('') === "#access_token=") {
         console.log("it's a match!");
         $interval.cancel();
-        return $timeout(function() {
-          return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
-        }, 0)
-        } else {
+        return $window.location.hash.split('').splice(15, $window.location.hash.length).join('');
+      } else {
           console.log("not yet!");
-        }
+      }
       }, 100)
       // return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
     })
