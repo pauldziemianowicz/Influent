@@ -8,18 +8,19 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
       console.log($window.location.href);
     }
 
-    $timeout(getAccessToken(), 0).then(function() {
+    return $timeout(getAccessToken(), 0).then(function() {
       console.log($window.location.href);
+      return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
 
-      $interval(function() {
-      console.log($window.location.hash.split('').splice(0, 14).join(''));
-      if ($window.location.hash.split('').splice(0, 14).join('') === "#access_token=") {
-        $interval.cancel();
-        return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
-      } else {
-          console.log("not yet!");
-      }
-    }, 100)
+    //   $interval(function() {
+    //   console.log($window.location.hash.split('').splice(0, 14).join(''));
+    //   if ($window.location.hash.split('').splice(0, 14).join('') === "#access_token=") {
+    //     $interval.cancel();
+    //     return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
+    //   } else {
+    //       console.log("not yet!");
+    //   }
+    // }, 100)
       // return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
     })
 
