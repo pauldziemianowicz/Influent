@@ -20,7 +20,10 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
           console.log("not yet!");
         }
       }, 100).then(function(data) {
-        console.log(data);
+        console.log('LALALLA');
+        console.log('LALALLA');
+        console.log('LALALLA');
+        console.log('LALALLA');
       })
       // return $window.location.hash.split('').splice(14, $window.location.hash.length).join('');
     })
