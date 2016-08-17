@@ -8,7 +8,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
       console.log($window.location.href);
     }
 
-    return $timeout(getAccessToken(), 0).then(function() {
+    $timeout(getAccessToken(), 0).then(function() {
 
       return $interval(function() {
       console.log($window.location.hash.split('').splice(0, 14).join(''));
