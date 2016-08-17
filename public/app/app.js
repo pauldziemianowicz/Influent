@@ -1,6 +1,6 @@
 var app = angular.module('Influent',['ui.router'])
 
-app.config(function($httpProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
+app.config(function($window, $httpProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
   // $urlRouterProvider.otherwise("/");
@@ -8,7 +8,10 @@ app.config(function($httpProvider, $stateProvider, $urlRouterProvider, $location
   $stateProvider
     .state('defaultHome', {
       url: '/',
-      templateUrl: "templates/default_home.html"
+      templateUrl: "templates/default_home.html",
+      onEnter: function(){
+        $window.location.reload();
+      }
     })
     .state('about', {
       url: '/about',
