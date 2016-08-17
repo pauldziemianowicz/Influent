@@ -44,10 +44,17 @@ app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout
     console.log(instagramAPI.instagramClientId);
   };
 
-  $scope.view.getUserData = function() {
-    console.log($scope.data.token);
-    console.log(instagramAPI.getUserData($scope.data.token));
-    $scope.data.userData = instagramAPI.getUserData($scope.data.token);
+  $scope.view.getUserData = function(accessToken) {
+    // console.log($scope.data.token);
+    // console.log(instagramAPI.getUserData($scope.data.token));
+    // $scope.data.userData = instagramAPI.getUserData($scope.data.token);
+    // console.log($scope.data.userData);
+
+    $http.jsonp("https://api.instagram.com/v1/users/self/?access_token=" + accessToken + "&callback=JSON_CALLBACK")
+    .success(function(data) {
+      console.log(data);
+      $scope.data.userData = data;
+    })
     console.log($scope.data.userData);
   }
 
