@@ -1,4 +1,4 @@
-app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout', function($scope, $window, instagramAPI, $timeout) {
+app.controller('MainController', ['$scope', '$window', 'instagramAPI', '$timeout', '$http', function($scope, $window, instagramAPI, $timeout, $http) {
   instagramAPI.returnInstagramClientId();
 
   $scope.view = {};
