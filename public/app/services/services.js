@@ -41,8 +41,8 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
 
   service.getUserData = function(accessToken) {
     $http({
-      method: "GET",
-      url: "https://api.instagram.com/v1/users/self/?access_token=" + accessToken + "&callback=?",
+      method: "JSONP",
+      url: "https://api.instagram.com/v1/users/self/?access_token=" + accessToken + "&callback=JSON_CALLBACK",
       headers: {"Access-Control-Allow-Origin": "https://influent.herokuapp.com"}
     })
     .then(function(data) {
