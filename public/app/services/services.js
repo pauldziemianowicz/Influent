@@ -48,7 +48,7 @@ app.factory('instagramAPI', ['$q', '$window', '$http', '$timeout', '$interval', 
     .then(function(data) {
       return data
     }).catch(function(error) {
-      console.log(error);
+      return error;
     })
   }
 
